@@ -1,0 +1,20 @@
+{% extends 'admin/layout.html' %}
+{% block content %}
+    <div class="page-header">
+        <h1>Create New User</h1>
+    </div>
+    <form action="{{ url_for('admin.create_user') }}" method="post" role="form">
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" class="form-control" name="username" id="username" placeholder="Username">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" name="password" id="password">
+            <label for="email">Email</label>
+            <input type="text" class="form-control" name="email" id="email" placeholder="email@address.com">
+            <label for="fullname">Full Name</label>
+            <input type="text" class="form-control" name="fullname" id="fullname" placeholder="Your Full Name">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+{% endblock %}

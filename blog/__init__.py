@@ -15,9 +15,11 @@ gravatar = Gravatar(app,
                     use_ssl=False,
                     base_url=None)
 
-@app.before_first_request
-def init_db():
-    Database.initialize()
+#@app.before_first_request
+#def init_db():
+#    Database.initialize()
+
+Database.initialize()
 
 from .views.blog import blog
 app.register_blueprint(blog, url_prefix='/blog')
