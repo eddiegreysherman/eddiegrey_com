@@ -11,6 +11,9 @@ def dashboard():
 
 @admin.route('/login')
 def login():
+    if request.method == 'POST':
+        # get the user info and verify they are logged in correctly
+        pass
     return render_template('admin/login.html')
 
 @admin.route('/new', methods=['GET', 'POST'])
