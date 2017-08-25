@@ -1,12 +1,12 @@
-from flask import Blueprint, render_template
+from flask import Blueprint, render_template, request
 from blog.models import Post
 
 blog = Blueprint('blog', __name__)
 
-posts = Post.all()
-
 @blog.route('/')
+@blog.route('/page/<int:page>')
 def blog_index():
+    posts = Post.all()
     return render_template('blog/index.html', posts=posts)
 
 @blog.route('/post/<string:post_id>')

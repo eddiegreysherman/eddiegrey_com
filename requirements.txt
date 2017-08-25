@@ -3,3 +3,5 @@ pymongo
 faker
 Flask-Gravatar
 passlib
+flask-paginate
+flask-mongoalchemy
